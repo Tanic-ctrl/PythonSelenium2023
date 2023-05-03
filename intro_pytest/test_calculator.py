@@ -25,7 +25,6 @@ def test_suma_valida():
     result = calculator.suma(2,2)
     assert result == 4, "La suma de 2+2 debe ser igual a 4"
 
-
 def test_resta_valida():
     calculator = Calculadora()
     result = calculator.resta(2, 2)
