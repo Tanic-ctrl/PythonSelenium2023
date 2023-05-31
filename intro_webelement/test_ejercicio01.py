@@ -12,11 +12,11 @@ class TestLandingPage:
 
     def setup_method(self):
         self.driver = webdriver.Chrome(service=CHROME_SERVICE)
+        self.driver.implicitly_wait(10)
         self.driver.maximize_window()
         self.driver.get(URL)
 
     def test_search_item(self):
-        time.sleep(5)
 
         navbar_search = self.driver.find_element(By.XPATH, '//*[@name="search"]')
         assert navbar_search.is_displayed(), "El campo de busqueda debe mostrarse"
@@ -26,7 +26,6 @@ class TestLandingPage:
         assert search_btn.is_displayed(), "El boton de busqueda debe mostrarse"
         search_btn.click()
 
-        time.sleep(2)
         find_item = self.driver.find_element(By.XPATH, '//img[@alt="iPhone"]')
         assert find_item.is_displayed(), "La imagen de Iphone tiene que mostrarse en el DOM"
 
