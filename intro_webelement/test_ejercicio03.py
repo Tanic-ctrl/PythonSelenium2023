@@ -43,5 +43,6 @@ class TestLandingPage:
         assert warning_msg.is_displayed(), "El warning error debe mostrarse"
         assert warning_msg.is_enabled(), "El warning error debe estar habilitado"
         time.sleep(3)
+
     def teardown_method(self):
         self.driver.quit()
